@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.WebApplication", "ToDoList.WebApplication\ToDoList.WebApplication.csproj", "{51EF45E3-FDC9-40A3-836C-15BF1CF149DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.DataAccess", "ToDoList.DataAccess\ToDoList.DataAccess.csproj", "{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.WebApi", "ToDoList.WebApi\ToDoList.WebApi.csproj", "{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{51EF45E3-FDC9-40A3-836C-15BF1CF149DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51EF45E3-FDC9-40A3-836C-15BF1CF149DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51EF45E3-FDC9-40A3-836C-15BF1CF149DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

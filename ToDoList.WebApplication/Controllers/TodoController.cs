@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.WebApplication.Models;
-using ToDoList.WebApplication.Repositories;
+using ToDoList.DataAccess.Models;
+using ToDoList.DataAccess;
 
 namespace ToDoList.WebApplication.Controllers
 {
@@ -42,7 +42,7 @@ namespace ToDoList.WebApplication.Controllers
                 this.todoRepository.Add(new Todo
                 {
                     Id = Guid.NewGuid(),
-                    Task = collection["Task"]
+                    Name = collection["Task"]
                 });
 
                 return RedirectToAction(nameof(Index));

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ToDoList.WebApplication.Models;
+using ToDoList.DataAccess.Models;
 
-namespace ToDoList.WebApplication.Repositories
+namespace ToDoList.DataAccess
 {
     public interface ITodoRepository
     {

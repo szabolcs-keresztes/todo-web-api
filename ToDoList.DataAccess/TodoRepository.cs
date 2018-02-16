@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ToDoList.WebApplication.Models;
+using ToDoList.DataAccess.Models;
 
-namespace ToDoList.WebApplication.Repositories
+namespace ToDoList.DataAccess
 {
     public class TodoRepository : ITodoRepository
     {
@@ -19,18 +19,18 @@ namespace ToDoList.WebApplication.Repositories
                 new Todo
                 {
                     Id = Guid.NewGuid(),
-                    Task = "First Task",
+                    Name = "First Task",
                 },
                 new Todo
                 {
                     Id = Guid.NewGuid(),
-                    Task = "Second Task",
+                    Name = "Second Task",
                     IsCompleted = true
                 },
                 new Todo
                 {
                     Id = Guid.NewGuid(),
-                    Task = "Third Task",
+                    Name = "Third Task",
                 },
             };
         }

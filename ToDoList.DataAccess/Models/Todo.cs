@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace ToDoList.WebApplication.Models
+namespace ToDoList.DataAccess.Models
 {
     public class Todo
     {
         public Guid Id { get; set; }
 
-        public string Task { get; set; }
+        public string Name { get; set; }
 
         public bool IsCompleted { get; set; }
     }
