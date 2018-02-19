@@ -39,7 +39,7 @@ namespace ToDoList.WebApplication.Controllers
         {
             try
             {
-                this.todoRepository.Add(new Todo
+                this.todoRepository.Create(new Todo
                 {
                     Id = Guid.NewGuid(),
                     Name = collection["Task"]
@@ -58,7 +58,7 @@ namespace ToDoList.WebApplication.Controllers
         {
             try
             {
-                todoRepository.CompleteTask(id);
+                todoRepository.Update(id, new Todo());
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -70,7 +70,7 @@ namespace ToDoList.WebApplication.Controllers
         // GET: Todo/Delete/5
         public ActionResult Delete(Guid id)
         {
-            todoRepository.Remove(id);
+            todoRepository.Delete(id);
 
             return RedirectToAction(nameof(Index));
         }

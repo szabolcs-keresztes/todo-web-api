@@ -57,26 +57,28 @@ namespace ToDoList.DataAccess
             return todos;
         }
 
-        public Todo GetById(Guid id)
-        {
-            return todos.FirstOrDefault(todo => todo.Id == id);
-        }
-
-        public void Add(Todo todo)
+        public Todo Create(Todo todo)
         {
             todos.Add(todo);
+
+            return todo;
         }
 
-        public void Remove(Guid id)
+        public void Delete(Guid id)
         {
             var todoToRemove = todos.FirstOrDefault(todo => todo.Id == id);
             todos.Remove(todoToRemove);
         }
 
-        public void CompleteTask(Guid id)
+        public void Update(Guid id, Todo updatedTodo)
         {
-            var todoToComplete = todos.FirstOrDefault(todo => todo.Id == id);
-            todoToComplete.IsCompleted = true;
+            var todoToUpdate = todos.FirstOrDefault(todo => todo.Id == id);
+            
+            if (todoToUpdate != null)
+            {
+                todoToUpdate.Name = updatedTodo.Name;
+                todoToUpdate.IsCompleted = updatedTodo.IsCompleted;
+            }
         }
     }
 }

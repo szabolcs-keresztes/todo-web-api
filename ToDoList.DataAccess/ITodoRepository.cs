@@ -7,13 +7,12 @@ namespace ToDoList.DataAccess
     public interface ITodoRepository
     {
         IEnumerable<Todo> GetAll();
+        
+        Todo Create(Todo todo);
 
-        Todo GetById(Guid id);
+        void Delete(Guid id);
 
-        void Add(Todo todo);
+        void Update(Guid id, Todo todo);
 
-        void Remove(Guid id);
-
-        void CompleteTask(Guid id);
     }
 }

@@ -25,10 +25,37 @@ namespace ToDoList.WebApi
         {
             services.AddCors(options =>
             {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .SetPreflightMaxAge(TimeSpan.FromSeconds(2520)));
+                        //.Build());
+
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => builder.WithOrigins("http://localhost:3000"));
-            });
 
+                options.AddPolicy("AllowAllMethods",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                               .AllowAnyMethod();
+                    });
+
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                    });
+
+                options.AddPolicy("AllowHeaders",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://example.com")
+                               .WithHeaders("accept", "content-type", "origin", "x-custom-header");
+                    });
+            });
             services.AddMvc();
         }
 
@@ -40,7 +67,15 @@ namespace ToDoList.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("AllowSpecificOrigin");
+            app.UseCors("CorsPolicy");
+            //app.UseCors("AllowAllOrigins");
+            //app.UseCors("AllowAllMethods");
+            //app.UseCors("AllowHeaders");
+
+            //app.UseCors(builder => 
+            //    builder
+            //        .WithOrigins("http://localhost:3000")
+            //        .AllowAnyHeader());
 
             app.UseMvc();
         }
