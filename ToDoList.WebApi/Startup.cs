@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using ToDoList.BusinessLogic;
+using ToDoList.DataAccess;
 
 namespace ToDoList.WebApi
 {
@@ -19,9 +18,9 @@ namespace ToDoList.WebApi
         }
 
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
             {
@@ -31,32 +30,15 @@ namespace ToDoList.WebApi
                         .AllowAnyHeader()
                         .AllowCredentials()
                         .SetPreflightMaxAge(TimeSpan.FromSeconds(2520)));
-                        //.Build());
-
-                options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:3000"));
-
-                options.AddPolicy("AllowAllMethods",
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:3000")
-                               .AllowAnyMethod();
-                    });
-
-                options.AddPolicy("AllowAllOrigins",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin();
-                    });
-
-                options.AddPolicy("AllowHeaders",
-                    builder =>
-                    {
-                        builder.WithOrigins("http://example.com")
-                               .WithHeaders("accept", "content-type", "origin", "x-custom-header");
-                    });
             });
             services.AddMvc();
+
+            var dependencyInjectionBuilder = new ContainerBuilder();
+            dependencyInjectionBuilder.Populate(services);
+            
+            dependencyInjectionBuilder.RegisterType<TodoService>().As<ITodoService>();
+            
+            return new AutofacServiceProvider(dependencyInjectionBuilder.Build());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,14 +50,6 @@ namespace ToDoList.WebApi
             }
 
             app.UseCors("CorsPolicy");
-            //app.UseCors("AllowAllOrigins");
-            //app.UseCors("AllowAllMethods");
-            //app.UseCors("AllowHeaders");
-
-            //app.UseCors(builder => 
-            //    builder
-            //        .WithOrigins("http://localhost:3000")
-            //        .AllowAnyHeader());
 
             app.UseMvc();
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ToDoList.DataAccess.Models;
 
-namespace ToDoList.DataAccess
+namespace ToDoList.DataAccess.Repositories
 {
     public class TodoRepository : ITodoRepository
     {

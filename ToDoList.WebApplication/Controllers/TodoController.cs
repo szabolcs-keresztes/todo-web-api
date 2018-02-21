@@ -8,71 +8,74 @@ namespace ToDoList.WebApplication.Controllers
 {
     public class TodoController : Controller
     {
-        private readonly ITodoRepository todoRepository;
+        // This controller is not the main important to keep up to date during development
+        // The moment when the business logic is well thought out then will fix this issues here
 
-        public TodoController()
-        {
-            todoRepository = TodoRepository.Instance;
-        }
+        //private readonly ITodoRepository todoRepository;
 
-        public IActionResult Index()
-        {
-            return View(this.todoRepository.GetAll());
-        }
+        //public TodoController()
+        //{
+        //    todoRepository = TodoRepository.Instance;
+        //}
 
-        // GET: Todo/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View(this.todoRepository.GetAll());
+        //}
 
-        // GET: Todo/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //// GET: Todo/Details/5
+        //public ActionResult Details(int id)
+        //{
+        //    return View();
+        //}
 
-        // POST: Todo/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                this.todoRepository.Create(new Todo
-                {
-                    Id = Guid.NewGuid(),
-                    Name = collection["Task"]
-                });
+        //// GET: Todo/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: Todo/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        this.todoRepository.Create(new Todo
+        //        {
+        //            Id = Guid.NewGuid(),
+        //            Name = collection["Task"]
+        //        });
 
-        // GET: Todo/Edit/5
-        public ActionResult Complete(Guid id)
-        {
-            try
-            {
-                todoRepository.Update(id, new Todo());
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
+
+        //// GET: Todo/Edit/5
+        //public ActionResult Complete(Guid id)
+        //{
+        //    try
+        //    {
+        //        todoRepository.Update(id, new Todo());
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         
-        // GET: Todo/Delete/5
-        public ActionResult Delete(Guid id)
-        {
-            todoRepository.Delete(id);
+        //// GET: Todo/Delete/5
+        //public ActionResult Delete(Guid id)
+        //{
+        //    todoRepository.Delete(id);
 
-            return RedirectToAction(nameof(Index));
-        }
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }

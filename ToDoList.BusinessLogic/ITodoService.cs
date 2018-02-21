@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using ToDoList.DataAccess.Models;
 
-namespace ToDoList.DataAccess
+namespace ToDoList.BusinessLogic
 {
-    public interface ITodoRepository
+    public interface ITodoService
     {
         IEnumerable<Todo> GetAll();
-        
+
         Todo Create(Todo todo);
 
         void Delete(Guid id);
 
         void Update(Guid id, Todo todo);
-
     }
 }

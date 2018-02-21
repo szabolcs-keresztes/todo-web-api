@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.WebApplication", "ToDoList.WebApplication\ToDoList.WebApplication.csproj", "{51EF45E3-FDC9-40A3-836C-15BF1CF149DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoList.WebApplication", "ToDoList.WebApplication\ToDoList.WebApplication.csproj", "{51EF45E3-FDC9-40A3-836C-15BF1CF149DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.DataAccess", "ToDoList.DataAccess\ToDoList.DataAccess.csproj", "{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoList.DataAccess", "ToDoList.DataAccess\ToDoList.DataAccess.csproj", "{42EC58A9-51B6-4CC9-A2AB-9C261D3F306F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.WebApi", "ToDoList.WebApi\ToDoList.WebApi.csproj", "{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoList.WebApi", "ToDoList.WebApi\ToDoList.WebApi.csproj", "{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.BusinessLogic", "ToDoList.BusinessLogic\ToDoList.BusinessLogic.csproj", "{375FBE7F-2871-40A9-B433-86DAE03E2495}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCE3FAA7-603A-48C6-A97E-CAA36D45C23C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375FBE7F-2871-40A9-B433-86DAE03E2495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375FBE7F-2871-40A9-B433-86DAE03E2495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375FBE7F-2871-40A9-B433-86DAE03E2495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375FBE7F-2871-40A9-B433-86DAE03E2495}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
